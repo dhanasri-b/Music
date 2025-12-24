@@ -1,0 +1,173 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Player Card */
+.player {
+    width: 350px;
+    background-color: #111;
+    border-radius: 20px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* Header */
+.header {
+    text-align: center;
+}
+
+/* Album */
+.album {
+    display: flex;
+    justify-content: center;
+}
+
+.album img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    transition: transform 0.5s;
+}
+
+.album img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Song Info */
+.song-info {
+    text-align: center;
+}
+
+.song-info p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background: #1db954;
+    animation: move 4s infinite alternate;
+}
+
+@keyframes move {
+    from { width: 20%; }
+    to { width: 80%; }
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.play-btn {
+    background: #1db954;
+    border: none;
+    color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.control-btn:hover,
+.play-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Playlist */
+.playlist {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.song {
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.song:hover {
+    background: #333;
+}
+
+.song.active {
+    background: #1db954;
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .player {
+        width: 95%;
+    }
+
+    .album img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .play-btn {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 768px) {
+    .player {
+        width: 420px;
+    }
+}
